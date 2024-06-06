@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "jsx": "preserve",
+    "lib": ["esnext", "dom"],
+    "useDefineForClassFields": false,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "paths": {
+    },
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "allowJs": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "newLine": "LF",
+    "outDir": "temp",
+    "removeComments": false,
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "env.d.ts",
+    "playground",
+    "packages/*/src"
+  ]
+}
