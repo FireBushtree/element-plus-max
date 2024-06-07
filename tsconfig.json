@@ -10,6 +10,9 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
+      "@element-plus-max/*": [
+        "packages/*"
+      ]
     },
     "resolveJsonModule": true,
     "types": ["node"],
@@ -25,8 +28,6 @@
     "skipLibCheck": true
   },
   "include": [
-    "env.d.ts",
-    "playground",
     "packages/*/src"
   ]
 }
