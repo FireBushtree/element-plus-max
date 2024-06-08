@@ -2,7 +2,7 @@ import path from 'node:path'
 import { build, defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Dts from 'vite-plugin-dts'
-import { componentsPath } from './path.js'
+import { componentsPath, tsconfigPath } from './path.js'
 
 const outputDir = path.resolve(componentsPath, './dist/es')
 
@@ -31,6 +31,7 @@ export function buildComponents() {
         root: componentsPath,
         entryRoot: path.resolve(componentsPath, './'),
         outDir: path.resolve(outputDir, './types'),
+        tsconfigPath,
       }),
     ],
   })
