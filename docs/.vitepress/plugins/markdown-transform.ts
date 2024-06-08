@@ -14,7 +14,7 @@ export function MarkdownTransform(): Plugin {
     async transform(code, id) {
       if (!id.endsWith('.md') || id.endsWith('index.md')) { return }
 
-      const match = /docs\/((\w+\/)*\w+)/img.exec(id)
+      const match = /docs\/((\w+\/)*\w+)/i.exec(id)
       if (!match) {
         return
       }

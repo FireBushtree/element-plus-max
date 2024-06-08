@@ -1,4 +1,3 @@
-import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
 // element-plus

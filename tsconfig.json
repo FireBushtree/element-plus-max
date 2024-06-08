@@ -28,6 +28,7 @@
     "skipLibCheck": true
   },
   "include": [
-    "packages/*/src"
+    "packages/**/*",
+    "scripts/**/*"
   ]
 }

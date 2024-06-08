@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 import { demoBlock } from './plugins/demo-block'
-import { getHooksSidebar } from './config-helper/sidebar'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
