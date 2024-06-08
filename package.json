@@ -12,17 +12,20 @@
   },
   "scripts": {
     "docs:dev": "pnpm run -C docs dev",
+    "build": "node ./scripts/build/main.js",
     "lint:fix": "eslint . --fix",
     "test": "vitest"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.15.0",
+    "@antfu/eslint-config": "^2.20.0",
     "@changesets/cli": "^2.27.1",
     "@types/node": "^20.12.7",
+    "@vitejs/plugin-vue": "^5.0.5",
     "eslint": "^8.57.0",
     "sass": "^1.75.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.9.1",
     "vitest": "^1.6.0",
     "vue": "^3.4.26"
   }
