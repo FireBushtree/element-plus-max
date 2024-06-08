@@ -49,6 +49,7 @@ export function buildComponents() {
         entryRoot: path.resolve(componentsPath, './'),
         outDir: path.resolve(outputDir, './types'),
         tsconfigPath,
+        include: [componentsPath],
       }),
     ],
   })

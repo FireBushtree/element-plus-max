@@ -28,6 +28,7 @@
     "skipLibCheck": true
   },
   "include": [
-    "packages/**/*"
+    "packages/**/*",
+    "docs/**/*"
   ]
 }
