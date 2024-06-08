@@ -2,11 +2,14 @@ import path from 'node:path'
 import { build, defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Dts from 'vite-plugin-dts'
+import { rimrafSync } from 'rimraf'
 import { componentsPath, tsconfigPath } from './path.js'
 
 const outputDir = path.resolve(componentsPath, './dist/es')
 
 export function buildComponents() {
+  clear()
+
   const config = defineConfig({
     build: {
       rollupOptions: {
@@ -37,4 +40,8 @@ export function buildComponents() {
   })
 
   build(config)
+}
+
+function clear() {
+  rimrafSync(path.resolve(componentsPath, './dist'))
 }
