@@ -1,6 +1,13 @@
 import path from 'node:path'
 
 export const __dirname = path.resolve()
-export const tsconfigPath = path.resolve(__dirname, './tsconfig.json')
-export const packagesPath = path.resolve(__dirname, './packages')
+export const rootPath = path.resolve(__dirname, '../../')
+
+export const tsconfigPath = path.resolve(rootPath, './tsconfig.json')
+
+// scripts
+export const scriptsPath = path.resolve(rootPath, './scripts')
+
+// packages
+export const packagesPath = path.resolve(rootPath, './packages')
 export const componentsPath = path.resolve(packagesPath, './components')

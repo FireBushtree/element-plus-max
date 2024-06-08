@@ -1,7 +1,14 @@
-import { buildComponents } from './components.js'
+import { execa } from 'execa'
 
 run()
 
 function run() {
-  buildComponents()
+  execa(
+    'gulp',
+    [
+      '-f',
+      './scripts/build/components.js',
+    ],
+    { stdio: 'inherit' },
+  )
 }
