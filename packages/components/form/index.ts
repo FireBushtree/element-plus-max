@@ -1,5 +1,6 @@
+import { withInstall } from '@element-plus-max/shared'
 import Form from './src/form.vue'
 
 export * from './src/types'
-export { Form }
-export default Form
+
+export const ElMaxForm = withInstall(Form)

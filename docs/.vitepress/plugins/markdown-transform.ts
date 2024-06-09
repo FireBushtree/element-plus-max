@@ -4,7 +4,7 @@ type Append = Record<'headers' | 'footers' | 'scriptSetups', string[]>
 
 export function MarkdownTransform(): Plugin {
   return {
-    name: 'ci-md-transform',
+    name: 'markdown-transform',
 
     enforce: 'pre',
 
@@ -12,13 +12,17 @@ export function MarkdownTransform(): Plugin {
     },
 
     async transform(code, id) {
-      if (!id.endsWith('.md') || id.endsWith('index.md')) { return }
-
-      const match = /docs\/((\w+\/)*\w+)/i.exec(id)
-      if (!match) {
+      if (
+        !id.endsWith('.md')
+        || id.endsWith('index.md')
+      ) {
         return
       }
 
+      const match = /docs\/((?:\w+\/)*\w+)/i.exec(id)
+      if (!match) {
+        return
+      }
       const folder = match[1]
       const folderDeep = folder.split('/').length - 1
       const append: Append = {
@@ -28,8 +32,6 @@ export function MarkdownTransform(): Plugin {
           `const demos = import.meta.glob('${'../'.repeat(folderDeep)}examples/${folder}/*.vue', { eager: true })`,
         ],
       }
-
-      code = transformVpScriptSetup(code, append)
 
       return combineMarkdown(
         code,
@@ -64,14 +66,4 @@ function combineMarkdown(code: string, headers: string[], footers: string[]) {
   code += footers.join('\n')
 
   return `${code}\n`
-}
-
-const vpScriptSetupRE = /<vp-script\s(.*\s)?setup(\s.*)?>([\s\S]*)<\/vp-script>/
-
-function transformVpScriptSetup(code: string, append: Append) {
-  const matches = code.match(vpScriptSetupRE)
-  if (matches) { code = code.replace(matches[0], '') }
-  const scriptSetup = matches?.[3] ?? ''
-  if (scriptSetup) { append.scriptSetups.push(scriptSetup) }
-  return code
 }

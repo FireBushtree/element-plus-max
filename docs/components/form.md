@@ -1,7 +1,7 @@
-<script>
-import { Form } from '@element-plus-max/components'
-</script>
-
 # Form
 
-<Form />
+::: demo
+
+components/form/test
+
+:::

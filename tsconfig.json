@@ -10,6 +10,7 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
+      "element-plus-max": ["packages/components"],
       "@element-plus-max/*": [
         "packages/*"
       ]
