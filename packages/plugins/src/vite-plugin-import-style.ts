@@ -28,7 +28,7 @@ export function ImportStyle(): Plugin {
     name: 'import-style',
     enforce: 'post',
     transform(source) {
-      transformStyle(source)
+      return transformStyle(source)
     },
   }
 }
@@ -97,9 +97,9 @@ function transformImportStyle(
         }
         else {
           styleImports.push(
-            `import '${lib}/es/components/${hyphenate(
+            `import '${lib}/dist/es/components/${hyphenate(
               component,
-            )}/style/css'`,
+            )}/style/index.css'`,
           )
         }
       }

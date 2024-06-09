@@ -7,7 +7,7 @@ import { dest, parallel, series, src } from 'gulp'
 import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass'
 import autoprefixer from 'gulp-autoprefixer'
-import { componentsPath, tsconfigPath } from './path.js'
+import { componentsPath, packagesPath, tsconfigPath } from './path.js'
 
 const sass = gulpSass(dartSass)
 const outputDir = path.resolve(componentsPath, './dist/es')
@@ -21,9 +21,15 @@ export default series(
 )
 
 export function buildComponents() {
-  console.log(componentsPath)
-
   const config = defineConfig({
+    resolve: {
+      alias: [
+        {
+          find: '@element-plus-max',
+          replacement: packagesPath,
+        },
+      ],
+    },
     build: {
       emptyOutDir: false,
       rollupOptions: {
@@ -65,5 +71,5 @@ function buildStyle() {
   return src(`${componentsPath}/**/style/**.scss`)
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(dest(`${outputDir}`))
+    .pipe(dest(`${outputDir}/components`))
 }
