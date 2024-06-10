@@ -6,5 +6,8 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "main": "index.ts"
+  "main": "index.ts",
+  "devDependencies": {
+    "element-plus": "^2.7.5"
+  }
 }
