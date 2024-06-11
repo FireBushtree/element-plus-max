@@ -10,13 +10,22 @@ export interface FormItem<T = any> {
   el?: T
 }
 
-export interface FormItemWithType<T = any> {
-  type: FormItemType
-  items: FormItem<T>
+export interface FormRowItem<T = any> {
+  type: 'row'
+  gutter?: number
+  span?: number
+  items: Array<{
+    span?: number
+  } & FormItem<T>>
 }
 
-export type FormContentItem<T = any> = FormItem<T> | FormItemWithType<T>
+export interface FormGroupItem<T = any> {
+  type: 'group'
+  items: Array<FormItem<T>>
+}
 
+export type FormItemWithType<T = any> = FormRowItem<T> | FormGroupItem<T>
+export type FormContentItem<T = any> = FormItem<T> | FormItemWithType<T>
 export type FormContent<T = any> = Array<FormContentItem<T>>
 
 export interface FormProps extends Partial<ElFormProps> {

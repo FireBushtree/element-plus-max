@@ -2,6 +2,9 @@
 import { ElFormItem } from 'element-plus'
 import type { FormItem } from './types'
 
+defineOptions({
+  name: 'ElMaxFormItem',
+})
 defineProps<FormItem>()
 </script>
 

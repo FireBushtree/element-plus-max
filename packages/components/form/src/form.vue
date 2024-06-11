@@ -3,6 +3,10 @@ import { ElForm } from 'element-plus'
 import { getComponentType } from './helper'
 import type { FormProps } from './types'
 
+defineOptions({
+  name: 'ElMaxForm',
+})
+
 const props = withDefaults(defineProps<FormProps>(), {
   content: () => [],
 })

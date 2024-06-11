@@ -8,10 +8,18 @@
 
 ## Demos
 
-render basic form with json
+render basic form
 
 ::: demo
 
 components/form/basic
+
+:::
+
+render row form
+
+::: demo
+
+components/form/row-basic
 
 :::

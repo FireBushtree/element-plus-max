@@ -33,7 +33,7 @@ export function buildComponents() {
     build: {
       emptyOutDir: false,
       rollupOptions: {
-        external: ['vue', /\.scss/],
+        external: ['vue', /\.scss/, 'element-plus'],
         output: [
           {
             format: 'es',
