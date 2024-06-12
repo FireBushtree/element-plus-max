@@ -19,7 +19,7 @@ export function MarkdownTransform(): Plugin {
         return
       }
 
-      const match = /docs\/((?:\w+\/)*\w+)/i.exec(id)
+      const match = /docs\/((?:\w+\/)*[\w-]+)/i.exec(id)
       if (!match) {
         return
       }

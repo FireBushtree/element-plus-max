@@ -19,5 +19,11 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Component', link: '/components/form' },
     ],
+    sidebar: {
+      '/components/': [
+        { text: 'Form', link: '/components/form' },
+        { text: 'List Page', link: '/components/list-page' },
+      ],
+    },
   },
 })

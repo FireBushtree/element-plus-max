@@ -97,9 +97,10 @@ function transformImportStyle(
         }
         else {
           styleImports.push(
-            `import '${lib}/dist/es/components/${hyphenate(
+            // `import '${lib}/dist/es/components/${hyphenate(
+            `import '@${lib}/components/${hyphenate(
               component,
-            )}/style/index.css'`,
+            )}/style/index.scss'`,
           )
         }
       }
