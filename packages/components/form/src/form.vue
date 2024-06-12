@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ElForm } from 'element-plus'
 import { getComponentType } from './helper'
-import type { FormProps } from './types'
+import type { ElMaxFormProps } from './types'
 
 defineOptions({
   name: 'ElMaxForm',
 })
 
-const props = withDefaults(defineProps<FormProps>(), {
+const props = withDefaults(defineProps<ElMaxFormProps>(), {
   content: () => [],
 })
 </script>

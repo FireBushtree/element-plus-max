@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ElFormItem } from 'element-plus'
-import type { FormItem } from './types'
+import type { ElMaxFormItem } from './types'
 
 defineOptions({
   name: 'ElMaxFormItem',
 })
-defineProps<FormItem>()
+defineProps<ElMaxFormItem>()
 </script>
 
 <template>

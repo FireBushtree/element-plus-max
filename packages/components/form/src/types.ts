@@ -1,33 +1,33 @@
 import type { Component } from 'vue'
 import type { FormProps as ElFormProps } from 'element-plus'
 
-export type FormItemType = 'row' | 'group'
+export type ElMaxFormItemType = 'row' | 'group'
 
-export interface FormItem<T = any> {
+export interface ElMaxFormItem<T = any> {
   label: string
   id: string
   component: Component
   el?: T
 }
 
-export interface FormRowItem<T = any> {
+export interface ElMaxFormRowItem<T = any> {
   type: 'row'
   gutter?: number
   span?: number
   items: Array<{
     span?: number
-  } & FormItem<T>>
+  } & ElMaxFormItem<T>>
 }
 
-export interface FormGroupItem<T = any> {
+export interface ElMaxFormGroupItem<T = any> {
   type: 'group'
-  items: Array<FormItem<T>>
+  items: Array<ElMaxFormItem<T>>
 }
 
-export type FormItemWithType<T = any> = FormRowItem<T> | FormGroupItem<T>
-export type FormContentItem<T = any> = FormItem<T> | FormItemWithType<T>
-export type FormContent<T = any> = Array<FormContentItem<T>>
+export type ElMaxFormItemWithType<T = any> = ElMaxFormRowItem<T> | ElMaxFormGroupItem<T>
+export type ElMaxFormContentItem<T = any> = ElMaxFormItem<T> | ElMaxFormItemWithType<T>
+export type ElMaxFormContent<T = any> = Array<ElMaxFormContentItem<T>>
 
-export interface FormProps extends Partial<ElFormProps> {
-  content: FormContent
+export interface ElMaxFormProps extends Partial<ElFormProps> {
+  content: ElMaxFormContent
 }

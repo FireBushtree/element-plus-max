@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ElCol, ElRow } from 'element-plus'
 import ElMaxFormItem from './form-item.vue'
-import type { FormRowItem } from './types'
+import type { ElMaxFormRowItem } from './types'
 
 defineOptions({
   name: 'ElMaxFormRow',
 })
 
-defineProps<FormRowItem>()
+defineProps<ElMaxFormRowItem>()
 </script>
 
 <template>
