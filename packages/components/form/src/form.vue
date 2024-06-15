@@ -15,7 +15,11 @@ const props = withDefaults(defineProps<ElMaxFormProps>(), {
 <template>
   <ElForm class="el-max-form" v-bind="props">
     <template v-for="item in content" :key="item.id">
-      <component :is="getComponentType(item)" v-bind="item" />
+      <component :is="getComponentType(item)" v-bind="item">
+        <template #filterButton>
+          <slot name="filterButton" />
+        </template>
+      </component>
     </template>
   </ElForm>
 </template>

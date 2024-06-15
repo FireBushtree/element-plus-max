@@ -15,5 +15,8 @@ defineProps<ElMaxFormRowItem>()
     <ElCol v-for="(item, index) in items" :key="index" :span="span || item.span || 8">
       <ElMaxFormItem v-bind="item" />
     </ElCol>
+    <ElCol :span="span || 8">
+      <slot name="filterButton" />
+    </ElCol>
   </ElRow>
 </template>

@@ -4,6 +4,7 @@
 
 - [ ] components
   - [ ] ElMaxForm
+    - [ ] set form init value
   - [ ] ElMaxListPage
 
 - [ ] build components

@@ -1,6 +1,6 @@
 import type { ElMaxFormContent } from '@element-plus-max/components'
 
-export interface ElMaxListPageProps {
+export type ElMaxListPageProps = Partial<{
   hasSearchForm: boolean
   searchForm: ElMaxFormContent
   /**
@@ -36,4 +36,4 @@ export interface ElMaxListPageProps {
    * 删除按钮文案
    */
   deleteText: string
-}
+}>
