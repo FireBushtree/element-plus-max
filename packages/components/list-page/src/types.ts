@@ -1,6 +1,7 @@
 import type { ElMaxFormContent } from '@element-plus-max/components'
+import type { TableColumnCtx } from 'element-plus'
 
-export type ElMaxListPageProps = Partial<{
+export type ElMaxListPageProps<T = any> = Partial<{
   hasSearchForm: boolean
   searchForm: ElMaxFormContent
   /**
@@ -36,4 +37,6 @@ export type ElMaxListPageProps = Partial<{
    * 删除按钮文案
    */
   deleteText: string
+
+  columns: Partial<TableColumnCtx<T>>[]
 }>

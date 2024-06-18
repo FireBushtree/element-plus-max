@@ -21,7 +21,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .vp-example {
-  padding: 1.5rem;
+  padding: 1.2rem;
   margin: 0.5px;
   background-color: var(--bg-color);
 }

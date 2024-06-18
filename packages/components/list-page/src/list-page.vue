@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ElMaxForm } from '@element-plus-max/components'
-import { ElButton } from 'element-plus'
+import { ElButton, ElTable, ElTableColumn } from 'element-plus'
 import type { ElMaxListPageProps } from './types'
 
 defineOptions({
@@ -18,6 +18,7 @@ withDefaults(defineProps<ElMaxListPageProps>(), {
   editText: '修改',
   viewText: '查看',
   deleteText: '删除',
+  columns: () => [],
 })
 
 function search() {}
@@ -42,8 +43,15 @@ function resetSearch() {}
       </ElMaxForm>
     </div>
 
-    <div class="el-ext-list-page__body">
-      body
+    <div class="el-max-list-page__body">
+      <ElButton v-if="hasNew" class="el-max-list-page__body__button" type="primary">
+        {{ newText }}
+      </ElButton>
+
+      <ElTable>
+        <ElTableColumn v-for="column in columns" :key="column.id" v-bind="column" />
+        <ElTableColumn label="操作" />
+      </ElTable>
     </div>
   </div>
 </template>

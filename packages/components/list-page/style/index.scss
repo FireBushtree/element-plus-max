@@ -1,6 +1,6 @@
 .el-max-list-page {
   &__filter {
-    padding: 20px 0 8px;
+    padding: 20px 0 0;
     border-bottom: 1px dashed #eee;
     position: relative;
 
@@ -9,6 +9,15 @@
       display: flex;
       align-items: flex-end;
       padding-bottom: 18px;
+    }
+  }
+
+  &__body {
+    padding: 20px 0;
+    position: relative;
+
+    &__button {
+      margin-bottom: 10px;
     }
   }
 }
