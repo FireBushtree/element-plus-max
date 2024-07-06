@@ -28,9 +28,9 @@ const config: ElMaxListPageProps = {
     ],
   }],
   columns: [
-    { label: '姓名' },
-    { label: '年龄' },
-    { label: '学号' },
+    { label: '姓名', prop: 'name' },
+    { label: '年龄', prop: 'age' },
+    { label: '学号', prop: 'no' },
   ],
 }
 </script>

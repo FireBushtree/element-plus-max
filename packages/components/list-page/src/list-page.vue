@@ -48,7 +48,12 @@ function resetSearch() {}
         {{ newText }}
       </ElButton>
 
-      <ElTable>
+      <ElTable
+        :data="[
+          { name: '小坤', age: 23, no: '0717' },
+          { name: '小坤', age: 23, no: '0717' },
+        ]"
+      >
         <ElTableColumn v-for="column in columns" :key="column.id" v-bind="column" />
         <ElTableColumn label="操作" />
       </ElTable>
