@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { ElMaxForm } from '@element-plus-max/components'
-import { ElButton, ElTable, ElTableColumn } from 'element-plus'
+import { ElButton, ElPagination, ElTable, ElTableColumn } from 'element-plus'
+import { ref } from 'vue'
 import type { ElMaxListPageProps } from './types'
 
 defineOptions({
   name: 'ElMaxListPage',
 })
 
-withDefaults(defineProps<ElMaxListPageProps>(), {
+const props = withDefaults(defineProps<ElMaxListPageProps>(), {
   hasSearchForm: true,
   searchForm: () => [],
   hasNew: true,
@@ -19,7 +20,19 @@ withDefaults(defineProps<ElMaxListPageProps>(), {
   viewText: '查看',
   deleteText: '删除',
   columns: () => [],
+  paginationSizes: () => [10, 20, 30, 40, 50],
+  paginationSize: 10,
+  paginationLayout: 'total, sizes, prev, pager, next, jumper',
+  firstPage: 1,
 })
+
+// pagination
+const total = ref(0)
+const page = ref(props.firstPage)
+const size = ref(props.paginationSize)
+
+function handleSizeChange() {}
+function handleCurrentChange() {}
 
 function search() {}
 
@@ -57,6 +70,18 @@ function resetSearch() {}
         <ElTableColumn v-for="column in columns" :key="column.id" v-bind="column" />
         <ElTableColumn label="操作" />
       </ElTable>
+
+      <div class="el-max-list-page__pagination">
+        <ElPagination
+          :current-page="page"
+          :page-sizes="paginationSizes"
+          :page-size="size"
+          :total="total"
+          :layout="paginationLayout"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        />
+      </div>
     </div>
   </div>
 </template>

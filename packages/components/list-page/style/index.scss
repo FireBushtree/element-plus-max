@@ -20,4 +20,10 @@
       margin-bottom: 10px;
     }
   }
+
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 24px;
+  }
 }

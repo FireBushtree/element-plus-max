@@ -39,4 +39,12 @@ export type ElMaxListPageProps<T = any> = Partial<{
   deleteText: string
 
   columns: Partial<TableColumnCtx<T>>[]
+
+  paginationSizes: Array<number>
+
+  paginationSize: number
+
+  paginationLayout: string
+
+  firstPage: number
 }>
