@@ -21,6 +21,7 @@
   "devDependencies": {
     "markdown-it": "^14.1.0",
     "normalize.css": "^8.0.1",
+    "postcss": "^8.4.39",
     "shiki": "^1.6.0",
     "vitepress": "^1.2.0"
   }

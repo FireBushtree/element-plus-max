@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="vp-example">
+  <div class="vp-example vp-raw">
     <ClientOnly>
       <component :is="demo" v-if="demo" v-bind="$attrs" />
     </ClientOnly>
